@@ -1,14 +1,15 @@
 version: '3'
 services:
   demoapp:
-    image: dockerdemo/sboot
+    image: sboot-hello-world:v1
     ports:
-    - "8080:8080"
+    - "9090:8080"
     networks:
-      - demoappnet    
+      - demoappnet
     deploy:
       replicas: 2
       restart_policy:
         condition: on-failure
 networks:
-  demoappnet:               
+  demoappnet:
+               
