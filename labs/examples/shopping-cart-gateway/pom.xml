@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.examples.spring.cloud</groupId>
-	<artifactId>spring-cloud-zuul1</artifactId>
+	<artifactId>shopping-cart-gateway</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>spring-cloud-zuul1</name>
+	<name>shopping-cart-gateway</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>

@@ -26,7 +26,7 @@ public class OrderService {
 		orderRepo.save(order);
 		
 		String msg = order.getId() + "," + order.getCustomerId() + "," + String.valueOf(order.getPrice());
-		
+		System.out.println("ORDER message: " + msg);
 		kafkaTemplate.send("ORDER_CREATED", msg);
 		
 		return order.getId();

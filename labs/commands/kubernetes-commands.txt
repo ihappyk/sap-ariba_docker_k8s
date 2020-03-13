@@ -24,18 +24,18 @@ eval $(minikube docker-env -u)	=> Disabling Minikube Docker Daemon
 docker images	=> Lists docker images available in Minikube Docker Daemon
 
 #Navigate to Project directory to build Docker images
-e.g: cd D:\Training\edrk_sboot-microserv-docker-k8s\labs\examples\spring-boot-docker-ex
+e.g: cd D:\Training\sap-ariba_docker_k8s\labs\examples\spring-boot-docker-ex
 
 #Build Docker image and add into Minikube Docker Registry
 docker build -t k8sdemo/sboot-kube:v1 --build-arg JAR_FILE=./target/*.jar .
 docker build -t k8sdemo/sboot-kube:v1 .
 
-docker build -t k8sdemo/emp-service:v1 --build-arg JAR_FILE=./target/*.jar .
-docker tag k8sdemo/emp-service:v1 dockertraining072019/emp-service:v1
+docker build -t scart/product-service:v1 .
+docker tag scart/product-service:v1 dockertraining072019/product-service:v1
 
 #Running Docker container inside Minikube
 kubectl run sboot-kube --image=k8sdemo/sboot-kube:v1 --port=8080
-kubectl run emp-api --image=k8sdemo/emp-service:v1 --port=8080
+kubectl run product-service --image=scart/product-service:v1 --port=8092
 
 #List app deployments
 kubectl get deployments
@@ -46,7 +46,7 @@ kubectl get pods
 #Expose application as service to access from outside
 kubectl expose deployment sboot-kube --type=NodePort --target-port=3000
 kubectl expose deployment sboot-kube --type=LoadBalancer --port=8080 --target-port=8080
-kubectl expose deployment emp-api --type=NodePort
+kubectl expose deployment product-service --type=NodePort
 
 #List services
 kubectl get services
@@ -55,15 +55,15 @@ kubectl get services
 kubectl get services
 
 #Autoscale service
-kubectl autoscale rs emp-api --min=2 --max=5 --cpu-percent=80
+kubectl autoscale rs product-service --min=2 --max=5 --cpu-percent=80
 
 #Launch app and opens in default browser
 minikube service sboot-kube
-minikube service emp-api
+minikube service product-service
 
 #Get service URL
 minikube service sboot-kube --url
-minikube service emp-api --url
+minikube service product-service --url
 
 #Rolling Update
 #Re-build Docker image with new changes and add into Minikube Docker Registry

@@ -54,13 +54,16 @@ public class CustomerService {
 	
     @KafkaListener(topics = "ORDER_CREATED", groupId="order-service")
     public void listenOrderApproval(ConsumerRecord<?, ?> cr) throws Exception {
-        System.out.println("###################Order Created: " + cr.value());
-
         String msg = (String) cr.value();
+
+        System.out.println("###################Order Created: " + msg);
+
         String[] tokens = msg.split(",");
         String orderId = tokens[0];
         String customerId = tokens[1];
         String price = tokens[2];
+        
+        System.out.println("orderId: " + orderId + ", customerId: " + customerId +", price: " + price);
         
         double dPrice = Double.valueOf(price);
         
