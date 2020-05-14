@@ -10,8 +10,9 @@ STEP 7: Open command prompt in Administrator mode and check kubectl and minikube
 		> kubectl version
 		> minikube version
 STEP 8: Open Windows Powershell in Administrator
-STEP 9: > minikube start --vm-driver=hyperv --hyperv-virtual-switch="SWITCH NAME"  	(Windows 10)
+STEP 9: Create Virtual Switch - https://docs.microsoft.com/en-us/windows-server/virtualization/hyper-v/get-started/create-a-virtual-switch-for-hyper-v-virtual-machines
+STEP 10: > minikube start --vm-driver=hyperv --hyperv-virtual-switch="SWITCH NAME"  	(Windows 10)
           minikube start --vm-driver=virtualbox --v=7 --alsologtostderr				(Windows 7)
 		  minikube start --vm-driver=none --alsologtostderr							(Linux)
-STEP 10:> minikube status
-STEP 11:> kubectl cluster-info
+STEP 11:> minikube status
+STEP 12:> kubectl cluster-info
