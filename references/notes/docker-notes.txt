@@ -7,18 +7,32 @@ Docker
 	- Docker Components
 		- Image
 		- Container
-		- Registry
-		- Docker Daemon
-		- Docker Client
+		- Registry (Local [/var/lib/docker] | Public | Private => Nexus | Artifactory)
+		- Docker Server (Daemon)
+		- Docker Client	
+			- CLI
+			- REST API
+			- SDK
+			- Plugins/Extentions
+		- Docker Compose => enables to run multiple docker containers in single unit
+		- Docker Swarm | Kubernetes	 => container management platform / orchestration platform
+		  
 	- Docker Installation and Setup
-		- Docker for Windows 10
+		- Docker Desktop for Windows (10 Prof)
 		- Docker for Windows 7 => Docker Toolbox
 		- Docker for Linux
 		- Docker for Mac
-		- Docker Community Edition vs Docker Enterprise Edition
-		
+		- Docker Community Edition vs Docker Enterprise Edition		
 	- Docker CLI
+	
 	- Dockerfile
+		step 1: install base os
+		step 2: install nodejs / java
+		step 3: copy application build code
+		step 4: npm start | java -jar app.jar
+		step 5: expose ports - 3000
+		
+		
 	- Build Docker Image
 	- Launch Docker Container
 	- Working with Public Registry

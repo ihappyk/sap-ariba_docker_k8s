@@ -2,12 +2,13 @@
 Launch Docker Quicksart Terminal (From shortcut in Desktop OR Windows Programs)
 
 #Docker Mac
-Launch Docker App => Starts Docker Daemon
+Launch Docker App 	=> Starts Docker Daemon
 Open Terminal => Run docker commands
-
+screen ~/Library/Containers/com.docker.docker/Data/vms/0/tty	=> Connects to Docker Daemon VM
+docker run -it --privileged --pid=host justincormack/nsenter1	=> Alternative to connect to Docker Daemon VM (Not Verified)
 
 #Working with Docker
-docker version
+docker version											(=> Docker version)
 docker info												(=> Docker details)
 docker image ls											(=> Lists images)
 docker ps												(=> Lists active containers)
@@ -23,8 +24,8 @@ docker image rm <image id/name>							(=> Remove image)
 docker pull <image id/name>								(=> Pull image from Hub)
 docker inspect <containerid>							(=> List docker container detail)
 docker-machine ip										(=> Show docker machine ip)
-docker exec -it <container name> /bin/bash				(=> Connect to running container)
-docker exec -it <container name> /bin/sh
+docker exec -it <container name> /bin/bash				(=> Connect to running container in bash mode)
+docker exec -it <container name> /bin/sh				(=> Connect to running container in sh mode)
 
 #Spring Boot Docker Example
 docker build -t sboot/sboot-docker:latest --build-arg JAR_FILE=./target/*.jar .
@@ -34,6 +35,9 @@ docker run -p 8081:8080 -env="SERVER_PORT=9091" sboot/sboot-docker
 docker build -t empservice-docker:latest --build-arg JAR_FILE=./target/*.jar .
 docker run -p 8080:8080 empservice-docker
 
+docker build -t java-docker-demo:latest .
+docker run -p 8080:8080 java-docker-demo
+
 #Jenkins Docker image setup Example
 docker pull jenkins
 docker run -p 8080:8080 -p 50000:50000 jenkins
@@ -41,6 +45,7 @@ docker run -p 8080:8080 -p 50000:50000 jenkins
 
 #Ngnix
 docker run --detach --publish=80:80 --name=webserver nginx
+docker run -d -p 80:80 --name=phonebook phonebook-ng8-docker
 
 #Save Image to Disk
 docker save -o images.tar image1 [image2 ..]
@@ -56,13 +61,15 @@ docker import -i myContainer1
 
 
 #Delete image
-docker image rm <imageid> -f
+docker image rm <imageid>
+docker image rm <imageid>
+docker rmi <imageid>
 
 #Login to DockerHub
 docker login
 
 #Tag image
-docker tag image username/repository:tag
+docker tag <sourceimage:tag> <targetimage:tag>
 
 docker tag sboot-hello-world:v1 dockertraining/sboot-hello-world:v1
 
