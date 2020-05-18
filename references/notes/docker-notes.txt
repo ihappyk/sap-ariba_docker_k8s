@@ -5,10 +5,10 @@ Docker
 	- Docker Architecture
 	- Docker Engine
 	- Docker Components
-		- Image
-		- Container
-		- Registry (Local [/var/lib/docker] | Public | Private => Nexus | Artifactory)
-		- Docker Server (Daemon)
+		- Image		=> read only template to create containers. Build and Ship. ~JAR
+		- Container => running instance of image. Can run one or more containers from an image. Run JAR -> JVM -> mem /resources
+		- Registry (Local [/var/lib/docker] | Public (Docker Hub) | Private => Nexus | Artifactory)
+		- Docker Server (Daemon) (dockerd)
 		- Docker Client	
 			- CLI
 			- REST API
@@ -18,12 +18,16 @@ Docker
 		- Docker Swarm | Kubernetes	 => container management platform / orchestration platform
 		  
 	- Docker Installation and Setup
-		- Docker Desktop for Windows (10 Prof)
+		- Docker Desktop for Windows (10 Prof/Entp)
 		- Docker for Windows 7 => Docker Toolbox
 		- Docker for Linux
 		- Docker for Mac
-		- Docker Community Edition vs Docker Enterprise Edition		
+		- Docker Community Edition vs Docker Enterprise Edition
+		- Docker Enterprise sold to Mirandis (2019)
 	- Docker CLI
+		- docker image
+		- docker container
+		
 	
 	- Dockerfile
 		step 1: install base os
@@ -35,6 +39,8 @@ Docker
 		
 	- Build Docker Image
 	- Launch Docker Container
+	- Export/Import Docker Image locally
+	- Export/Load Docker Container locally
 	- Working with Public Registry
 		- Create Account in https://hub.docker.com
 		- Docker Login
@@ -45,9 +51,12 @@ Docker
 		
 	- Eclipse Docker Tooling plugin
 	
-	- Dockerizing microservices
+	- Docker Compose
 	
-	- Docker Compose	
+	- Dockerizing microservices (ShoppingCart)
+	
+
+	
 	- Docker Swarm
 	
 	- Docker Storage Drivers

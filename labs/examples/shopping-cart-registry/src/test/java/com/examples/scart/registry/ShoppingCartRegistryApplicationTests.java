@@ -1,4 +1,4 @@
-package com.examples.scart;
+package com.examples.scart.registry;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
