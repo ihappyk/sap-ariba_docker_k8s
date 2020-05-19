@@ -25,10 +25,10 @@ Docker
 		- Docker Community Edition vs Docker Enterprise Edition
 		- Docker Enterprise sold to Mirandis (2019)
 	- Docker CLI
+		- docker basic commands
 		- docker image
 		- docker container
-		
-	
+			
 	- Dockerfile
 		step 1: install base os
 		step 2: install nodejs / java
@@ -39,13 +39,16 @@ Docker
 		
 	- Build Docker Image
 	- Launch Docker Container
+	
 	- Export/Import Docker Image locally
 	- Export/Load Docker Container locally
+	
 	- Working with Public Registry
 		- Create Account in https://hub.docker.com
 		- Docker Login
 		- Tag Image and Push Image
 		- Docker Logout
+		
 	- Connect to Running Docker Container
 	- Make changes in Container and Commit
 		
@@ -55,18 +58,23 @@ Docker
 	
 	- Dockerizing microservices (ShoppingCart)
 	
-
-	
-	- Docker Swarm
-	
 	- Docker Storage Drivers
-		- 
+		 
 	- Docker Volumes
-		
+		- bind mount	=> persist the data into host file system. source directory should be created and available.
+		- volumes		=> persist the data into docker storage area within host machine. managed by docker.
+		- tmpfs mount	=> temporarily persist data into host memory. tmpfs mount removed once container stops.
 		
 	- Docker Networking
+		- bridge	=> best when you need multiple containers to communicate on the same Docker host
+		- host		=> best when the network stack should not be isolated from the Docker host, but you want other aspects of the container to be isolated
+		- overlay	=> best when you need containers running on different Docker hosts to communicate using Swarm services
+		- macvlan	=> best when you are migrating from a VM setup or need your containers to look like physical hosts on your network, each with a unique MAC address
+		- none		=> no networking
 	
 	- Docker Linking
+	
+	- Docker Swarm
 		
 	- Storage Drivers
 		
