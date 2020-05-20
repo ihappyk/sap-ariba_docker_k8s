@@ -59,6 +59,10 @@ Docker
 	- Dockerizing microservices (ShoppingCart)
 	
 	- Docker Storage Drivers
+		- Overlay2
+		- AUFS
+		- ZFS
+		- Devicemapper
 		 
 	- Docker Volumes
 		- bind mount	=> persist the data into host file system. source directory should be created and available.
@@ -72,7 +76,7 @@ Docker
 		- macvlan	=> best when you are migrating from a VM setup or need your containers to look like physical hosts on your network, each with a unique MAC address
 		- none		=> no networking
 	
-	- Docker Linking
+	- Docker Linking (Deprecated)
 	
 	- Docker Swarm
 		

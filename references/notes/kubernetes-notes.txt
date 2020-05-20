@@ -2,6 +2,28 @@ Kubernetes
 - Introduction
 - What is Kubernetes	=> container management/orchestration platform
 - Docker Swarm vs Kubernetes
+	- Docker Swarm
+		pros
+		- Ease of setup
+		- Faster self healing
+		- Simple to medium complex usecases
+		cons
+		- Lack of management console in free version
+		- Complex usecase not fits well
+		- Locked in to docker container
+		
+	- K8s
+		pros
+		- Open source
+		- Designed to run different type of containers (docker, rkt, cri-o) => CRI
+		- Medium to complex usecases
+		- Designed as modular and pluggable components
+		- Dashboard for monitoring and mgmt
+		cons
+		- complex to setup
+		- required more resources to run
+	
+		
 - Kubernetes Architecture
 - Kubernetes Components
 	- Master Components

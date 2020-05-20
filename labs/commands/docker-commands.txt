@@ -32,7 +32,7 @@ docker commit <container name> <imagename>				(=> Commits container changes into
 docker build -t hello-world-docker:latest .
 docker run -p 8080:8080 --name="hello-docker" hello-world-docker
 
-#Hello World Docker Example with build argument
+#Hello World Docker Example with build argumentchr
 docker build -t hello-world-docker:latest --build-arg JAR_FILE=./target/*.jar .
 
 #Hello World Docker Example with environmental variable
@@ -95,7 +95,7 @@ docker logout
 ##Storage
 ##bind mount
 #bind mount (with --mount option)
-docker run -d --name bindtest --mount type=bind,source="/home/docker,target=/app nginx:latest
+docker run -d --name bindtest --mount type=bind,source=/home/docker,target=/app nginx:latest
 
 #bind mount (with -v option)
 docker run -d --name bindtest -v /home/docker:/app nginx:latest
@@ -129,6 +129,3 @@ docker run -d --name tmptest1 -v temp:/app nginx:latest
 #verify that mount is a tmpfs mount
 docker container inspect tmptest			(=> check Mounts section)
 docker exec -it temptest bash				(=> check dir /app, write some data and stop/start container n verify)
-
-
-
