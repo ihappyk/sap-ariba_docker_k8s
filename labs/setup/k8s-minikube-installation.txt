@@ -63,3 +63,28 @@ STEP 11b: Enable minikube dashboard remote access (default port = 8001). Require
 		sudo kubectl proxy --address='0.0.0.0' --disable-filter=true &		
 
 STEP 12: Open Browser and access the dashboard URL
+
+Known Issues and Fixes
+======================
+ISSUE #1
+========
+Dockerhub connectivity issue has been seen in Mac OS with hyperkit VM. You will not see this issue, if you use other VMs like VirtualBox or FusionBox. Mac OS reserves the port 53 for dnscrypt, which is conflicted with one of the port used by hyperkit.
+
+Error response from daemon: Get https://registry-1.docker.io/v2/: dial tcp: lookup registry-1.docker.io on 192.168.64.1:53: read udp 192.168.64.15:60324->192.168.64.1:53: read: connection refused
+You can check all the processes running on 53 port using the following command.
+
+FIX #1:
+=======
+minikube start --vm-driver=hyperkit  --hyperkit-vpnkit-sock=/Users/<<username>>/Library/Containers/com.docker.docker/Data/vpnkit.eth.sock
+
+ISSUE #2: (Getting below error in Mac while starting Minikube)
+=========
+This VM is having trouble accessing https://k8s.gcr.io
+To pull new external images, you may need to configure a proxy: https://minikube.sigs.k8s.io/docs/reference/networking/proxy/
+
+FIX #2:
+=====
+minikube ssh
+	sudo vi /etc/systemd/network/10-eth1.network add DNS=8.8.8.8 under [Network]
+	sudo vi /etc/systemd/network/20-dhcp.network add DNS=8.8.8.8 under [Network]
+	sudo systemctl restart systemd-networkd
