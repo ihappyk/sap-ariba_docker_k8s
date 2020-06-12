@@ -36,9 +36,9 @@ Kubernetes
 	- Node Components
 		- Kubelet			=> manages worker node
 		- Container Runtime	=> can run the containers complies to CRI (Container Runtime Interface) spec
-		- Kube Proxy		=> 
+		- Kube Proxy		=> enables networking between k8s pods and nodes
 		
-	- Kubectl
+	- Kubectl				=> k8s cli client
 	
 - Kubernetes Concepts (Resources)
 	- Namespace
