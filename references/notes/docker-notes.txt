@@ -59,10 +59,11 @@ Docker
 	- Dockerizing microservices (ShoppingCart)
 	
 	- Docker Storage Drivers
-		- Overlay2
 		- AUFS
-		- ZFS
+		- Overlay2
 		- Devicemapper
+		- Btrfs
+		- ZFS
 		 
 	- Docker Volumes
 		- bind mount	=> persist the data into host file system. source directory should be created and available.
