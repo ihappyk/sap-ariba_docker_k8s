@@ -18,7 +18,7 @@ Kubernetes
 		- Designed to run different type of containers (docker, rkt, cri-o) => CRI
 		- Medium to complex usecases
 		- Designed as modular and pluggable components
-		- Dashboard for monitoring and mgmt
+		- Dashboard for monitoring and management
 		cons
 		- complex to setup
 		- required more resources to run
@@ -30,7 +30,7 @@ Kubernetes
 		- Kube API Server	=> all external/internal communcation will be routed thru API server
 		- etcd				=> key/value based datastore
 		- Kube Scheduler	=> schedules the requests based on resource availability
-		- Kube Controller Manager	=> collects stats from all nodes and monitor continously to take appropriate action
+		- Kube Controller Manager	=> collects stats from all nodes and monitor continuously to take appropriate action
 		- Cloud Controller Manager	=> integration with cloud providers
 			
 	- Node Components
