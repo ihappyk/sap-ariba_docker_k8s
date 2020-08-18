@@ -28,7 +28,7 @@ services:
       - scart  
   
   registry-service:
-      image: scart/registry-service
+      image: dockrtraining/registry-service
       container_name: registry-service
       restart: always 
       ports:
@@ -37,7 +37,7 @@ services:
       - scart  
   
   gateway-service:
-      image: scart/gateway-service
+      image: dockrtraining/gateway-service
       container_name: gateway-service
       restart: always 
       ports:
@@ -50,7 +50,7 @@ services:
         REGISTRY_SERVER_HOST: registry-service
   
   customer-service:
-      image: scart/customer-service
+      image: dockrtraining/customer-service
       container_name: customer-service
       restart: always 
       ports:
@@ -64,7 +64,7 @@ services:
         KAFKA_BOOTSTRAP_SERVERS:  kafka:9092    
   
   order-service:
-      image: scart/order-service
+      image: dockrtraining/order-service
       container_name: order-service
       restart: always 
       ports:
@@ -78,7 +78,7 @@ services:
         KAFKA_BOOTSTRAP_SERVERS:  kafka:9092  
 
   product-service:
-      image: scart/product-service
+      image: dockrtraining/product-service
       container_name: product-service
       restart: always 
       ports:
