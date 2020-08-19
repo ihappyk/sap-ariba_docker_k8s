@@ -15,7 +15,7 @@ Kubernetes
 	- K8s
 		pros
 		- Open source
-		- Designed to run different type of containers (docker, rkt, cri-o) => CRI
+		- Designed to run different type of containers (docker, rkt, cri-o) => CRI (Container Runtime Interface)
 		- Medium to complex usecases
 		- Designed as modular and pluggable components
 		- Dashboard for monitoring and management
@@ -40,26 +40,35 @@ Kubernetes
 		
 	- Kubectl				=> k8s cli client
 	
-- Kubernetes Concepts (Resources)
+- Kubernetes Concepts (Resources / Objects)
 	- Namespace
+	- Manifest
+		- Label
+		- Annotation
+		- Selector
+		
 	- Pod
-	- Service
-	- Deployment
+	- Service -> ClusterIP, NodePort, LoadBalancer, ExternalName
 	
-	- Job
-	- CroJob
-		
-	- Label
-	- Annotation
-	- Selector
-		
+	- Deployment
+		- replication
+		- rolling updates
+		- rollbacks
+			
 	- Replication Controller	
 	- ReplicaSet
+	
 	- StatefulSet
 	- DaemonSet
+	
+	- Job
+	- CronJob
 	
 	- ConfigMap
 	- Secret
 	
 - Networking
-- Volumes
+- Volumes / Storage
+	- Local FS
+	- NFS
+	- Cloud Storage
