@@ -9,7 +9,7 @@ spec:
   selector:
     app: product-service  
   ports:
-  - port: 8761
+  - port: 8091
   externalIPs:
   - 172.17.0.8
 ---
