@@ -6,10 +6,12 @@ metadata:
     app: registry-service
 spec:
   type: LoadBalancer
+  selector:
+    app: registry-service  
   ports:
   - port: 8761
-  selector:
-    app: registry-service
+  externalIPs:
+  - 172.17.0.8
 ---
 apiVersion: apps/v1
 kind: Deployment
