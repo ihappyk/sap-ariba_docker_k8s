@@ -54,7 +54,7 @@ docker run -d --name=product-service -p 8091:8091 -e "REGISTRY_SERVER_HOST=192.1
 docker run -d --name=gateway-service -p 8111:8111 -e "REGISTRY_SERVER_HOST=192.168.99.100" scart/gateway-service
 
 #Start Kafka
-docker-compose -f docker-compose-kafka up -docker
+docker-compose -f docker-compose-kafka.yml up -d
 
 #Run Customer and Order Services as docker containers
 docker run -d --name=customer-service -p 8092:8092 -e "REGISTRY_SERVER_HOST=192.168.99.100" -e "KAFKA_BOOTSTRAP_SERVERS=192.168.99.100:9092" scart/customer-service
