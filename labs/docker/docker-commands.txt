@@ -79,7 +79,7 @@ docker wait  <container id/name>						(=> Block until one or more containers sto
 docker build -t hello-world-docker:latest .
 docker run -d -p 8080:8080 --name="hello-docker" hello-world-docker
 
-#Hello World Docker Example with build argumentchr
+#Hello World Docker Example with build argument
 docker build -t hello-world-docker:latest --build-arg JAR_FILE=./target/*.jar .
 
 #Hello World Docker Example with environmental variable
@@ -93,6 +93,9 @@ docker run -p 8080:8080 -p 50000:50000 jenkins
 #Ngnix
 docker run --detach --publish=80:80 --name=webserver nginx
 docker run -d -p 80:80 --name=webserver nginx
+
+#MySQL
+docker run -d --name mysql -e MYSQL_ROOT_PASSWORD=root -p 3306:3306 mysql
 
 #Save Image to Disk
 docker save -o images.tar image1 [image2 ..]

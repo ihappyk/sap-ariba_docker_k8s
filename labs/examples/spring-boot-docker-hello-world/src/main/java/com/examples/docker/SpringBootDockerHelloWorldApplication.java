@@ -15,7 +15,7 @@ public class SpringBootDockerHelloWorldApplication {
 	
 	@GetMapping("/")
 	public String greetings() {
-		return "Welcome to Docker Training! updated";
+		return "Welcome to Docker Training! V1";
 	}	
 
 }
