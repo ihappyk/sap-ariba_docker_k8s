@@ -54,8 +54,31 @@ docker run -d --name=product-service -p 8091:8091 -e "REGISTRY_SERVER_HOST=192.1
 docker run -d --name=gateway-service -p 8111:8111 -e "REGISTRY_SERVER_HOST=192.168.99.100" scart/gateway-service
 
 #Start Kafka
-docker-compose -f docker-compose-kafka.yml up -d
+docker-compose -f docker-compose-kafka up -docker
 
 #Run Customer and Order Services as docker containers
 docker run -d --name=customer-service -p 8092:8092 -e "REGISTRY_SERVER_HOST=192.168.99.100" -e "KAFKA_BOOTSTRAP_SERVERS=192.168.99.100:9092" scart/customer-service
 docker run -d --name=order-service -p 8093:8093 -e "REGISTRY_SERVER_HOST=192.168.99.100" -e "KAFKA_BOOTSTRAP_SERVERS=192.168.99.100:9092" scart/order-service
+
+#Create Customers
+POST http://localhost:8111/shoppingcart/api/customer/customers
+
+{
+    "name": "Anil",
+    "age": 40,
+    "gender": "Male",
+    "prime": false,
+    "creditLimit": 10000,
+    "address": "Koramangala",
+    "location": "Bangalore"
+}
+
+#Create Orders
+POST http://localhost:8111/shoppingcart/api/order/orders
+
+{
+    "customerId": "1",
+	"productId": 2,
+    "quantity": 1,
+    "price": 2000
+}
