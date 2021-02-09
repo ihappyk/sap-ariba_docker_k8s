@@ -11,7 +11,7 @@ spec:
   ports:
   - port: 8091
   externalIPs:
-  - 172.17.0.8
+  - 172.17.0.30
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -36,4 +36,4 @@ spec:
         - containerPort: 8091
         env:
         - name: REGISTRY_SERVER_HOST
-          value: 172.17.0.8       
+          value: 172.17.0.30       
