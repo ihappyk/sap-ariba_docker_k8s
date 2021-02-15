@@ -3,9 +3,9 @@ kind: Service
 metadata:
   name: app
 spec:
-  clusterIP: None
   selector:
     app: stateful
+  type: LoadBalancer
   ports:
   - protocol: TCP
     port: 80

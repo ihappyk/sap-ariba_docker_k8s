@@ -41,14 +41,24 @@ Kubernetes
 	- Kubectl				=> k8s cli client
 	
 - Kubernetes Concepts (Resources / Objects)
-	- Namespace
-	- Manifest
-		- Label
-		- Annotation
-		- Selector
+	- Namespace				=> logical grouping of resources
+	- Manifest				=> specification for creating diff resources
+		- Metadata
+			- Label			=> key value pair to uniquely identify the resources / objects
+			- Annotation	=> description about the resource
+			
+		- Specification		=> specifies the desired state
+			- Selector
+			- Template
+			- Replicas
 		
-	- Pod
-	- Service -> ClusterIP, NodePort, LoadBalancer, ExternalName
+	- Pod					=> smallest unit of workload. Comprises one or more containers.
+	
+	- Service 
+		- ClusterIP
+		- NodePort
+		- LoadBalancer
+		- ExternalName
 	
 	- Deployment
 		- replication
