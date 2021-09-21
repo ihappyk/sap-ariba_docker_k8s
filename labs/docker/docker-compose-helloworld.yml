@@ -1,7 +1,7 @@
 version: '3.3'
 services:
  hello-world:
-    image: hello-world-docker
+    image: hello-docker
     ports:
     - "9090:8080"
     deploy:
