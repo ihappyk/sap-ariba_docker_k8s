@@ -1,6 +1,6 @@
 #Docker stack and swarm commands
 docker swarm init --advertise-addr=192.168.99.100
-docker stack deploy -c docker-compose.yml dockerswarmdemo
+docker stack deploy -c docker-compose-helloworld.yml dockerswarmdemo
 docker service ls
 docker stack services dockerswarmdemo
 docker container ls -q
